@@ -1,4 +1,4 @@
-# Adform Technical Interview task
+# Adform Technical Interview Task
 
 Token API endpoint for geting authentication token http://localhost:8081/token
 
