@@ -16,6 +16,7 @@ public class ReportRequestFactory {
     public static ReportRequest createBidRequestReportRequest() {
         ReportRequestBuilder builder = new ReportRequestBuilder();
         return  builder.addMetric(ReportRequestConstants.METRIC_BID_REQUEST)
+                .addDimension(ReportRequestConstants.DIMENSION_DATE)
                 .setFilterDate(ReportRequestConstants.FILTER_LAST_TWO_YEARS)
                 .build();
     }

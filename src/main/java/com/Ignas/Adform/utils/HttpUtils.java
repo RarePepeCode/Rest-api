@@ -21,7 +21,7 @@ public class HttpUtils {
     @Autowired
     private TokenService tokenService;
 
-    public HttpResponse<String> sendPostRequest(String url, String mediaType, String body) throws IOException, InterruptedException { ;
+    public HttpResponse<String> sendPostRequest(String url, String mediaType, String body) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(body))
                 .header(HttpHeaders.CONTENT_TYPE, mediaType)

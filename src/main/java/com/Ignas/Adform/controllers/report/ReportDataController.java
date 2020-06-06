@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,12 @@ public class ReportDataController {
     ReportDataService reportDataService;
 
     @GetMapping("/impressions")
-    public ReportData getImpressions() throws IOException, InterruptedException {
-        return reportDataService.getReportData();
+    public String[][] getImpressions() throws IOException, InterruptedException {
+        return reportDataService.getImpressionsReportData();
+    }
+
+    @GetMapping("/bid-request")
+    public List<LocalDate> getBidRequest() throws IOException, InterruptedException {
+        return reportDataService.getBidRequestReportData();
     }
 }
