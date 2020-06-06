@@ -1,5 +1,6 @@
 package com.Ignas.Adform.services.report;
 
+import com.Ignas.Adform.logic.ReportRequestFactory;
 import com.Ignas.Adform.model.report.ReportData;
 import com.Ignas.Adform.model.report.ReportRequest;
 import com.Ignas.Adform.utils.HttpUtils;
@@ -22,7 +23,8 @@ public class ReportDataServiceImpl implements ReportDataService {
     private static final String GET_REPORT_URL = "https://api.adform.com/v1/reportingstats/publisher/reportdata";
 
     @Override
-    public ReportData getReportData(ReportRequest requestParams) throws IOException, InterruptedException {
+    public ReportData getReportData() throws IOException, InterruptedException {
+        ReportRequest requestParams = ReportRequestFactory.createImpressionsReportRequest();
         HttpResponse<String> response = httpUtils.sendPostRequest(GET_REPORT_URL, MediaType.APPLICATION_JSON_VALUE, JsonUtlils.serializeJSON(requestParams));
         return  JsonUtlils.deserializeJsonToReportData(response.body()).getReportData();
 

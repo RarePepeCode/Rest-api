@@ -4,10 +4,6 @@ public class FilterObject {
 
     String date;
 
-    public FilterObject(String date) {
-        this.date = date;
-    }
-
     public String getDate() {
         return date;
     }

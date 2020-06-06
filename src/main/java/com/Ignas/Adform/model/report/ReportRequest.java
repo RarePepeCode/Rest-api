@@ -3,36 +3,39 @@ package com.Ignas.Adform.model.report;
 import com.Ignas.Adform.model.FilterObject;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReportRequest {
 
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String[] dimensions;
+    private List<String> dimensions;
     private FilterObject filter;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Boolean includeRowCount;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Boolean includeTotals;
-    private String[] metrics;
+    private List<String> metrics;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String paging;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String sort;
 
-    public ReportRequest(String[] dimensions, FilterObject filter, Boolean includeRowCount, Boolean includeTotals, String[] metrics, String paging, String sort) {
-        this.dimensions = dimensions;
-        this.filter = filter;
-        this.includeRowCount = includeRowCount;
-        this.includeTotals = includeTotals;
-        this.metrics = metrics;
-        this.paging = paging;
-        this.sort = sort;
+
+
+    public ReportRequest() {
+        this.dimensions = new ArrayList<>();
+        this.metrics = new ArrayList<>();
+        this.filter = new FilterObject();
     }
 
-    public String[] getDimensions() {
+    public List<String> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(String[] dimensions) {
+    public void setDimensions(List<String> dimensions) {
         this.dimensions = dimensions;
     }
 
@@ -60,11 +63,11 @@ public class ReportRequest {
         this.includeTotals = includeTotals;
     }
 
-    public String[] getMetrics() {
+    public List<String> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(String[] metrics) {
+    public void setMetrics(List<String> metrics) {
         this.metrics = metrics;
     }
 

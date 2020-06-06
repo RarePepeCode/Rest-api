@@ -2,7 +2,7 @@ package com.Ignas.Adform.model.report;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReportData {
 
     private String[] columnHeaders;

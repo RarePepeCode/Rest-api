@@ -9,5 +9,5 @@ import java.util.List;
 public interface ReportDataService {
 
 
-    ReportData getReportData(ReportRequest requestParams) throws IOException, InterruptedException;
+    ReportData getReportData() throws IOException, InterruptedException;
 }

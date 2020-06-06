@@ -21,9 +21,6 @@ public class ReportDataController {
 
     @GetMapping("/impressions")
     public ReportData getImpressions() throws IOException, InterruptedException {
-        ReportData xd =
-         reportDataService.getReportData(new ReportRequest(new String[]{"date"}, new FilterObject("LastTwoYears"), null, null, new String[]{"impressions"}, null, null));
-        return xd;
-        //return reportDataService.getReportData(new ReportRequest(new String[]{"date"}, new FilterObject("LastTwoYears"), null, null, new String[]{"impressions"}, null, null));
+        return reportDataService.getReportData();
     }
 }
