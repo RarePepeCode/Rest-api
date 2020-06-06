@@ -1,11 +1,12 @@
 package com.Ignas.Adform.services.token;
 
-import com.Ignas.Adform.model.Token;
-import com.Ignas.Adform.model.TokenRequest;
+import com.Ignas.Adform.model.token.Token;
 
 import java.io.IOException;
 
 public interface TokenService {
 
-    Token getToken(TokenRequest requestParams) throws IOException, InterruptedException;
+    Token getToken() throws IOException, InterruptedException;
+
+    String getAccessTokenHeader() throws IOException, InterruptedException;
 }

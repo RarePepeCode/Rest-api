@@ -1,6 +1,8 @@
 package com.Ignas.Adform.controllers.report;
 
-import com.Ignas.Adform.model.ReportData;
+import com.Ignas.Adform.model.FilterObject;
+import com.Ignas.Adform.model.report.ReportData;
+import com.Ignas.Adform.model.report.ReportRequest;
 import com.Ignas.Adform.services.report.ReportDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +19,11 @@ public class ReportDataController {
     @Autowired
     ReportDataService reportDataService;
 
-    @GetMapping()
-    public List<ReportData> xd() throws IOException, InterruptedException {
-        return reportDataService.getReportData(null);
+    @GetMapping("/impressions")
+    public ReportData getImpressions() throws IOException, InterruptedException {
+        ReportData xd =
+         reportDataService.getReportData(new ReportRequest(new String[]{"date"}, new FilterObject("LastTwoYears"), null, null, new String[]{"impressions"}, null, null));
+        return xd;
+        //return reportDataService.getReportData(new ReportRequest(new String[]{"date"}, new FilterObject("LastTwoYears"), null, null, new String[]{"impressions"}, null, null));
     }
 }

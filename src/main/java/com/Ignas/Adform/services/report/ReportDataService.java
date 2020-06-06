@@ -1,7 +1,7 @@
 package com.Ignas.Adform.services.report;
 
-import com.Ignas.Adform.model.ReportData;
-import com.Ignas.Adform.model.ReportRequest;
+import com.Ignas.Adform.model.report.ReportData;
+import com.Ignas.Adform.model.report.ReportRequest;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,5 +9,5 @@ import java.util.List;
 public interface ReportDataService {
 
 
-    List<ReportData> getReportData(ReportRequest requestParams) throws IOException, InterruptedException;
+    ReportData getReportData(ReportRequest requestParams) throws IOException, InterruptedException;
 }

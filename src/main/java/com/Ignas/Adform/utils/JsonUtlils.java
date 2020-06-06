@@ -1,7 +1,8 @@
 package com.Ignas.Adform.utils;
 
-import com.Ignas.Adform.model.ReportData;
-import com.Ignas.Adform.model.Token;
+import com.Ignas.Adform.model.report.ReportData;
+import com.Ignas.Adform.model.report.ReportWrapper;
+import com.Ignas.Adform.model.token.Token;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -22,10 +23,9 @@ public class JsonUtlils {
         });
     }
 
-    public static List<ReportData> deserializeJsonToReportData(String json) throws JsonProcessingException {
+    public static ReportWrapper deserializeJsonToReportData(String json) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-        return mapper.readValue(json, new TypeReference<>() {
+        return mapper.readValue(json, new TypeReference<ReportWrapper>() {
         });
     }
 

@@ -1,14 +1,32 @@
-package com.Ignas.Adform.model;
+package com.Ignas.Adform.model.report;
+
+import com.Ignas.Adform.model.FilterObject;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class ReportRequest {
 
-    private  String[] dimensions;
-    private  String filter;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String[] dimensions;
+    private FilterObject filter;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Boolean includeRowCount;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Boolean includeTotals;
     private String[] metrics;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String paging;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String sort;
+
+    public ReportRequest(String[] dimensions, FilterObject filter, Boolean includeRowCount, Boolean includeTotals, String[] metrics, String paging, String sort) {
+        this.dimensions = dimensions;
+        this.filter = filter;
+        this.includeRowCount = includeRowCount;
+        this.includeTotals = includeTotals;
+        this.metrics = metrics;
+        this.paging = paging;
+        this.sort = sort;
+    }
 
     public String[] getDimensions() {
         return dimensions;
@@ -18,11 +36,11 @@ public class ReportRequest {
         this.dimensions = dimensions;
     }
 
-    public String getFilter() {
+    public FilterObject getFilter() {
         return filter;
     }
 
-    public void setFilter(String filter) {
+    public void setFilter(FilterObject filter) {
         this.filter = filter;
     }
 

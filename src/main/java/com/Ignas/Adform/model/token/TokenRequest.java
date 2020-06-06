@@ -1,4 +1,4 @@
-package com.Ignas.Adform.model;
+package com.Ignas.Adform.model.token;
 
 public class TokenRequest {
 

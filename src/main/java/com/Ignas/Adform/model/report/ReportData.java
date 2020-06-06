@@ -1,12 +1,15 @@
-package com.Ignas.Adform.model;
+package com.Ignas.Adform.model.report;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
 public class ReportData {
 
     private String[] columnHeaders;
     private String[][]  rows;
     private Integer[] totals;
     private Integer totalRowCount;
-    private String correlationCode;
+
 
     public String[] getColumnHeaders() {
         return columnHeaders;
@@ -38,13 +41,5 @@ public class ReportData {
 
     public void setTotalRowCount(Integer totalRowCount) {
         this.totalRowCount = totalRowCount;
-    }
-
-    public String getCorrelationCode() {
-        return correlationCode;
-    }
-
-    public void setCorrelationCode(String correlationCode) {
-        this.correlationCode = correlationCode;
     }
 }
